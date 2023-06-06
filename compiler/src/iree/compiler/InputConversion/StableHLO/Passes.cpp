@@ -90,6 +90,8 @@ void buildStableHLOInputConversionPassPipelineImpl(OpPassManager &passManager,
   // that we don't want forcing 32-bit embedded devices to support.
   // TODO(#8745): remove these and prefer the flow pipeline options instead.
   if (clDemoteI64ToI32) {
+    passManager.addPass(
+      stablehlo::createSplitRngState());
     passManager.addPass(IREE::Util::createDemoteI64ToI32Pass());
   }
   if (clDemoteF64ToF32) {

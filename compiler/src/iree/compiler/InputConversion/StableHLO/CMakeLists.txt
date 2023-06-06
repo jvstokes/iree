@@ -64,6 +64,7 @@ iree_cc_library(
     "StableHLOToLinalgConvolution.cpp"
     "StableHLOToLinalgDotProd.cpp"
     "StableHLOToLinalgExt.cpp"
+    "SplitRngState.cpp"
     "StableHLOToLinalgPointwise.cpp"
     "StableHLOToLinalgRandom.cpp"
     "StableHLOToLinalgReduce.cpp"
