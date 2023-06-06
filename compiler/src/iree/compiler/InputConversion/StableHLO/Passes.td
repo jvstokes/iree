@@ -62,4 +62,10 @@ def VerifyCompilerStableHloInputLegality :
       "Verifies that only supported IR constructs are passed to the compiler";
 }
 
+def SplitRngState :
+    Pass<"iree-stablehlo-split-rng-state", "ModuleOp"> {
+  let summary =
+      "Splits i64 state parameters for rng bit generation before i64 demotion to i32";
+}
+
 #endif // IREE_COMPILER_INPUTCONVERSION_STABLEHLO_PASSES

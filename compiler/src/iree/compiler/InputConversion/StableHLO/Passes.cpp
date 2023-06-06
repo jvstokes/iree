@@ -72,7 +72,13 @@ void buildStableHLOInputConversionPassPipelineImpl(
   // stack. This is often required because of implicit i64 insertion by JAX/HLO
   // that we don't want forcing 32-bit embedded devices to support.
   // TODO(#8745): remove these and prefer the flow pipeline options instead.
+<<<<<<< HEAD
   if (options.demoteI64ToI32) {
+=======
+  if (clDemoteI64ToI32) {
+    passManager.addPass(
+      stablehlo::createSplitRngState());
+>>>>>>> 512aa7b7a (Adding skeleton pass to split rng state.)
     passManager.addPass(IREE::Util::createDemoteI64ToI32Pass());
   }
   if (options.demoteF64ToF32) {
